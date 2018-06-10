@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Floyd Central Soccer</title>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/site.js"></script>
+  </head>
+  <body>
+    <div class="jumbotron jumbotron-ad">
+      <div class="container">
+        <h1 class="sitename"></h1>
+		<p class="lead" style="padding-left:40px;">Welcome to our soccer portal. Choose a school below.</p>		
+        <p class="lead" style="padding-left:40px;">
+        <a href="FCCamp2018.pdf" download>
+            <img src="fcsummercampv6.png" alt="FC summer camp july 13th">
+        </a> 
+        </p>        
+      </div>
+    </div>
+    <div class="container">
+        
+      <!--  
+       <div id="ad" class="row">
+        <div class="col-sm-7">
+
+        </div>
+      </div>
+      -->
+                
+      <div id="logorow" class="row">
+        <div class="col-sm-2">
+          <p>
+            <img src="./img/logo.png" alt="logo" />
+          </p>
+        </div>
+        <div class="col-sm-5">
+          <p style="margin-top:20px">
+            <a id="1" class="btn btn-block btn-primary btn-large"
+            style="min-height:100px;padding-top:30px;background:#31824A;color:#ffffff;" href="/fc">Floyd Central Teams</a>
+          </p>
+        </div>
+      </div>
+      <div id="logorow2" class="row">
+        <div class="col-sm-2">
+          <p>
+            <img src="./img/logohh.png" alt="logo" />
+          </p>
+        </div>
+        <div class="col-sm-5">
+          <p style="margin-top:20px">
+            <a id="1" class="btn btn-block btn-primary btn-large"
+            style="min-height:100px;padding-top:30px;background:#31824A;color:#ffffff;" href="/hhms">HHMS Teams</a>
+          </p>
+        </div>
+      </div>
+   
+      
+      
+      <script>
+          
+        //Revealing Module Design Pattern 
+        var page = (function () {               
+                var init = function() {         
+                        teamnode.fetchInfo().done( function (data) {
+                                //console.log(&quot;fetchInfo done: &quot; + JSON.stringify(data));                               
+                                document.title = data.sitename;
+                                $('.sitename').html(data.sitename);
+                                //$('.lead').html(data.sitewelcome);                              
+                        });
+                        
+                        
+                }; //init
+        
+                //Public functions add here; Private otherwise
+                return {
+                        init: init,
+                };
+
+        })();
+        
+        $(document).ready(function () {
+                page.init();    
+        });     
+
+</script>
+      <div class="footer"></div>
+    </div>
+    <!-- container -->
+  </body>
+</html>
